@@ -146,6 +146,9 @@ export default function PagPrin() {
                         <td>Thornton</td>
                         <td>@fat</td>
                       </tr>
+                      <tr>
+                        <button class="btn btn-secondary">Editar</button>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
