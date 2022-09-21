@@ -141,7 +141,7 @@ export default function PagPrin() {
                         <td>Sincelejo</td>
                         <td>Calle 17 #40-30</td>
                         <td>Pendiente</td>
-                        <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
+                        <td><button class="btn btn-info">Editar</button></td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
@@ -149,7 +149,7 @@ export default function PagPrin() {
                         <td>Bogota</td>
                         <td>Calle 107 #50-29</td>
                         <td>Pendiente</td>
-                        <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
+                        <td><button class="btn btn-info">Editar</button></td>
                       </tr>
                     </tbody>
                   </table>
