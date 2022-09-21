@@ -118,34 +118,37 @@ export default function PagPrin() {
               </div>
 
               <div class="card-body">
-                <div class="table-responsive">
+                <div class="table table-responsive">
                   <table
-                    class="table table-bordered"
+                    class="table table-striped"
                     id="dataTable"
                     width="100%"
                     cellspacing="0"
                   >
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Ciudad Entrega </th>
+                        <th scope="col">Direccion Entrega</th>
+                        <th scope="col">Estado</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>19/09/2022</td>
+                        <td>Sincelejo</td>
+                        <td>Calle 17 #40-30</td>
+                        <td>Pendiente</td>
                         <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>20/09/2022</td>
+                        <td>Bogota</td>
+                        <td>Calle 107 #50-29</td>
+                        <td>Pendiente</td>
                         <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
                       </tr>
                     </tbody>
