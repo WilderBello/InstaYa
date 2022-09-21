@@ -139,14 +139,14 @@ export default function PagPrin() {
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
-                        <td><button class="btn btn-info" data-target="#logoutModal">Editar</button></td>
+                        <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
-                        <td><button class="btn btn-info" data-target="#logoutModal">Editar</button></td>
+                        <td><button class="btn btn-info" data-target="#logoutModal" data-toggle="modal">Editar</button></td>
                       </tr>
                     </tbody>
                   </table>
