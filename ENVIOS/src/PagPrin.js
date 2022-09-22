@@ -14,12 +14,7 @@ export default function PagPrin() {
           height="120"
           alt="img 1"
         />
-        <a
-          class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="index.html"
-        >
-          <div class="sidebar-brand-text mx-3">InstaYa Envios</div>
-        </a>
+        <div class="sidebar-brand">InstaYa</div>
 
         <hr class="sidebar-divider" />
 
@@ -96,23 +91,18 @@ export default function PagPrin() {
           </nav>
 
           <div class="container-fluid">
-            <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+            <h1 class="h3 mb-2 text-red">Envios InstaYa</h1>
             <p class="mb-4">
-              DataTables is a third party plugin that is used to generate the
-              demo table below. For more information about DataTables, please
-              visit the{" "}
-              <a target="_blank" href="https://datatables.net">
-                official DataTables documentation
-              </a>
-              .
+              Como usuario puedes crear y editar ordenes 😁✈️
+              <p>InstaYa tu empresa de envios!</p>
             </p>
 
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-                <h5 class="m-0 font-weight-bold text-primary" id="TitEnv">
+                <h5 class="mb-4 font-weight-bold text-primary text-center" id="TitEnv">
                   Envios Realizados
                 </h5>
-                <a class="btn btn-primary" href="#" id="btnEnvio">
+                <a class="btn btn-primary col-12" href="#">
                   Nuevo Envio
                 </a>
               </div>
@@ -125,31 +115,36 @@ export default function PagPrin() {
                     width="100%"
                     cellspacing="0"
                   >
-                    <thead>
+                    <thead className="table table-dark">
                       <tr>
-                        <th scope="col">Servicio</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Ciudad Entrega </th>
-                        <th scope="col">Direccion Entrega</th>
-                        <th scope="col">Estado</th>
+                        <th className="text-center">Servicio</th>
+                        <th className="text-center">Fecha</th>
+                        <th className="text-center">Ciudad Entrega </th>
+                        <th className="text-center">Direccion Entrega</th>
+                        <th className="text-center">Estado</th>
+                        <th className="text-center">Editar</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>19/09/2022</td>
-                        <td>Sincelejo</td>
-                        <td>Calle 17 #40-30</td>
-                        <td>Pendiente</td>
-                        <td><button class="btn btn-info">Editar</button></td>
+                        <th className="text-center">1</th>
+                        <td className="text-center">19/09/2022</td>
+                        <td className="text-center">Sincelejo</td>
+                        <td className="text-center">Calle 17 #40-30</td>
+                        <td className="text-center">Pendiente</td>
+                        <td className="text-center">
+                          <button class="btn btn-info">Editar</button>
+                        </td>
                       </tr>
                       <tr>
-                        <th scope="row">2</th>
-                        <td>20/09/2022</td>
-                        <td>Bogota</td>
-                        <td>Calle 107 #50-29</td>
-                        <td>Pendiente</td>
-                        <td><button class="btn btn-info">Editar</button></td>
+                        <th className="text-center">2</th>
+                        <td className="text-center">20/09/2022</td>
+                        <td className="text-center">Bogota</td>
+                        <td className="text-center">Calle 107 #50-29</td>
+                        <td className="text-center">Pendiente</td>
+                        <td className="text-center">
+                          <button class="btn btn-info">Editar</button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
