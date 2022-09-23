@@ -102,10 +102,7 @@ export default function PagPrin() {
                 <h5 class="mb-4 font-weight-bold text-primary text-center" id="TitEnv">
                   Envios Realizados
                 </h5>
-               
-                  
-                  <button class="btn btn-primary col-12" href="#" data-toggle="modal" data-target="#dialogoEditar">Nuevo Envio</button>
-                
+                  <button class="btn btn-primary col-12" href="#" data-toggle="modal" data-target="#dialogoNuevoPedido">Nuevo Envio</button>
               </div>
 
               <div class="card-body">
