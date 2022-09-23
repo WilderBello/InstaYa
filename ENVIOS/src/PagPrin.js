@@ -102,9 +102,10 @@ export default function PagPrin() {
                 <h5 class="mb-4 font-weight-bold text-primary text-center" id="TitEnv">
                   Envios Realizados
                 </h5>
-                <a class="btn btn-primary col-12" href="#">
-                  Nuevo Envio
-                </a>
+               
+                  
+                  <button class="btn btn-primary col-12" href="#" data-toggle="modal" data-target="#dialogoEditar">Nuevo Envio</button>
+                
               </div>
 
               <div class="card-body">
@@ -285,6 +286,85 @@ export default function PagPrin() {
           </div>
         </div>
 
+        <div class="modal fade" id="dialogoNuevoPedido" tabindex="-1" role="dialog">
+          <div className="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exModalLabelEnvio">Nuevo Envio</h5>
+                <button type="button" class="close" name="button" data-dismiss="modal"aria-label="Close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="fecha">Fecha:</label>
+                      <input type="date" class="form-control" id="fechaEnvio"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="hora">Hora:</label>
+                      <input type="time" class="form-control" id="horaEnvio"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select class="form-control" id="estadoEnvio">
+                      <option>Guardado</option>
+                      <option>Pendiente</option>
+                    </select>
+                  </div>
+                    <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label for="largo">Largo:</label>
+                      <input type="number" class="form-control" id="largoEnvio"/>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="ancho">Ancho:</label>
+                      <input type="number" class="form-control" id="anchoEnvio"/>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="alto">Alto:</label>
+                      <input type="number" class="form-control" id="altoEnvio"/>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label for="peso">Peso:</label>
+                      <input type="number" class="form-control" id="pesoEnvio"/>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                      <label for="direccionRecogida">Direccion Recogida:</label>
+                      <input type="text" class="form-control form-control-sm" id="direccionRecogidaEnvio"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="ciudadRecogida">Ciudad Recogida:</label>
+                        <input type="text" class="form-control form-control-sm" id="ciudadRecogidaEnvio"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">Nombre Destinatario:</label>
+                      <input type="text" class="form-control form-control-sm" id="nombreEnvio"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="cedula">Cédula/Nit Destinatario:</label>
+                        <input type="text" class="form-control form-control-sm" id="cedulaEnvio"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="direccionEntrega">Direccion Entrega:</label>
+                        <input type="text" class="form-control form-control-sm" id="direccionEntregaEnvio"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="ciudadEntrega">Ciudad Entrega:</label>
+                        <input type="text" class="form-control form-control-sm" id="ciudadEntregaEnvio"/>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                      <a class="btn btn-primary" href="#">Registrar</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
