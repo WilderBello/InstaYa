@@ -303,13 +303,6 @@ export default function PagPrin() {
                       <input type="time" class="form-control" id="horaEnvio"/>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="estado">Estado:</label>
-                    <select class="form-control" id="estadoEnvio">
-                      <option>Guardado</option>
-                      <option>Pendiente</option>
-                    </select>
-                  </div>
                     <div class="form-row">
                     <div class="form-group col-md-3">
                       <label for="largo">Largo:</label>
