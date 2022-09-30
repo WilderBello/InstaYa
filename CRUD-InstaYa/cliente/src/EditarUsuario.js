@@ -2,13 +2,15 @@ import React from "react";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useAuth0 } from "@auth0/auth0-react";
 function EditarUsuario() {
+  const { user, isAuthenticated } = useAuth0();
+  const { logout } = useAuth0();
   const params = useParams();
 
   //Hooks
   // const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
+  //const [email, setEmail] = useState("");
   // const [telefono, setTelefono] = useState("");
   const [fecha, setFecha] = useState("");
   const [hora, setHora] = useState("");
@@ -31,7 +33,7 @@ function EditarUsuario() {
         console.log(res.data[0]);
         const datausuario = res.data[0];
         // setNombre(datausuario.nombre);
-        setEmail(datausuario.email);
+        //setEmail(datausuario.email);
         // setTelefono(datausuario.telefono);
         setFecha(datausuario.fecha);
         setHora(datausuario.hora);
@@ -54,7 +56,7 @@ function EditarUsuario() {
     // nuevo objeto para actualizar usuario
     const actualizarusuario = {
       // nombre: nombre,
-      email: email,
+      //email: email,
       // telefono: telefono,
       fecha: fecha,
       hora: hora,
@@ -91,7 +93,7 @@ function EditarUsuario() {
         id="accordionSidebar"
       >
         <img
-          src="img/Logo2.png"
+          src="/img/Logo2.png"
           className="d-block  mx-auto"
           width="120"
           height="120"
@@ -147,12 +149,9 @@ function EditarUsuario() {
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                    Usuario
+                    {user.name}
                   </span>
-                  <img
-                    class="img-profile rounded-circle"
-                    src="img/undraw_profile.svg"
-                  />
+                  <img class="img-profile rounded-circle" src={user.picture} />
                 </a>
 
                 <div
@@ -186,62 +185,179 @@ function EditarUsuario() {
             <span class="input-group-text" id="basic-addon1">Nombre</span>
             <input type="text" className='form-control' value={nombre} onChange={(e) => { setNombre(e.target.value) }}></input>
           </div> */}
-                <div className="input-group mb-3">
+                {/* <div className="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1">Email</span>
                   <input type="email" className='form-control' value={email} onChange={(e) => { setEmail(e.target.value) }}></input>
-                </div>
+                </div> */}
                 {/* <div className="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Telefono</span>
             <input type="text" className='form-control' value={telefono} onChange={(e) => { setTelefono(e.target.value) }}></input>
           </div> */}
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Fecha</span>
-                  <input type="date" className='form-control' value={fecha} onChange={(e) => { setFecha(e.target.value) }}></input>
-                  <span class="input-group-text" id="basic-addon1">Hora</span>
-                  <input type="time" className='form-control' value={hora} onChange={(e) => { setHora(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Fecha
+                  </span>
+                  <input
+                    type="date"
+                    className="form-control"
+                    value={fecha}
+                    onChange={(e) => {
+                      setFecha(e.target.value);
+                    }}
+                  ></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Hora
+                  </span>
+                  <input
+                    type="time"
+                    className="form-control"
+                    value={hora}
+                    onChange={(e) => {
+                      setHora(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Estado</span>
-                  <select name="select" className='form-control' value={estado} onChange={(e) => { setEstado(e.target.value) }}>
-                    <option >Entregado</option>
+                  <span class="input-group-text" id="basic-addon1">
+                    Estado
+                  </span>
+                  <select
+                    name="select"
+                    className="form-control"
+                    value={estado}
+                    onChange={(e) => {
+                      setEstado(e.target.value);
+                    }}
+                  >
+                    <option>Entregado</option>
                     <option selected>Pendiente</option>
-                    <option >Cancelado</option>
+                    <option>Cancelado</option>
                   </select>
                   {/* <input type="text" className='form-control' value={estado} onChange={(e) => { setEstado(e.target.value) }}></input> */}
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Largo</span>
-                  <input type="number" className='form-control' value={largo} onChange={(e) => { setLargo(e.target.value) }}></input>
-                  <span class="input-group-text" id="basic-addon1">Alto</span>
-                  <input type="number" className='form-control' value={alto} onChange={(e) => { setAlto(e.target.value) }}></input>
-                  <span class="input-group-text" id="basic-addon1">Ancho</span>
-                  <input type="number" className='form-control' value={ancho} onChange={(e) => { setAncho(e.target.value) }}></input>
-                  <span class="input-group-text" id="basic-addon1">Peso</span>
-                  <input type="text" className='form-control' value={peso} onChange={(e) => { setPeso(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Largo
+                  </span>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={largo}
+                    onChange={(e) => {
+                      setLargo(e.target.value);
+                    }}
+                  ></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Alto
+                  </span>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={alto}
+                    onChange={(e) => {
+                      setAlto(e.target.value);
+                    }}
+                  ></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Ancho
+                  </span>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={ancho}
+                    onChange={(e) => {
+                      setAncho(e.target.value);
+                    }}
+                  ></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Peso
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={peso}
+                    onChange={(e) => {
+                      setPeso(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Direccion Recogida</span>
-                  <input type="text" className='form-control' value={direccion_recogida} onChange={(e) => { setDireccionRecogida(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Direccion Recogida
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={direccion_recogida}
+                    onChange={(e) => {
+                      setDireccionRecogida(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Ciudad Recogida</span>
-                  <input type="text" className='form-control' value={ciudad_recogida} onChange={(e) => { setCiudadRecogida(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Ciudad Recogida
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={ciudad_recogida}
+                    onChange={(e) => {
+                      setCiudadRecogida(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Nombre Destinatario</span>
-                  <input type="text" className='form-control' value={nombre_destinatario} onChange={(e) => { setNombreDestinatario(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Nombre Destinatario
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={nombre_destinatario}
+                    onChange={(e) => {
+                      setNombreDestinatario(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Cedula Destinatario</span>
-                  <input type="number" className='form-control' value={cedula_destinatario} onChange={(e) => { setCedulaDestinatario(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Cedula Destinatario
+                  </span>
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={cedula_destinatario}
+                    onChange={(e) => {
+                      setCedulaDestinatario(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Direccion Entrega</span>
-                  <input type="text" className='form-control' value={direccion_entrega} onChange={(e) => { setDireccionEntrega(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Direccion Entrega
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={direccion_entrega}
+                    onChange={(e) => {
+                      setDireccionEntrega(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <div className="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">Ciudad Entrega</span>
-                  <input type="text" className='form-control' value={ciudad_entrega} onChange={(e) => { setCiudadEntrega(e.target.value) }}></input>
+                  <span class="input-group-text" id="basic-addon1">
+                    Ciudad Entrega
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={ciudad_entrega}
+                    onChange={(e) => {
+                      setCiudadEntrega(e.target.value);
+                    }}
+                  ></input>
                 </div>
                 <button onClick={editarUsuario} className="btn btn-success">
                   Editar Envio
@@ -283,8 +399,7 @@ function EditarUsuario() {
               </button>
             </div>
             <div class="modal-body">
-              Select "Logout" below if you are ready to end your current
-              session.
+              Seleccione "Logout" si está listo para finalizar su actual sesión.
             </div>
             <div class="modal-footer">
               <button
@@ -294,9 +409,12 @@ function EditarUsuario() {
               >
                 Cancel
               </button>
-              <a class="btn btn-primary" href="/">
+              <button
+                className="btn btn-primary"
+                onClick={() => logout({ returnTo: window.origin })}
+              >
                 Logout
-              </a>
+              </button>
             </div>
           </div>
         </div>

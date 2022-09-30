@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/envios" element={<ListaUsuarios />} exact></Route>
           <Route
-            path="/agregarusuario/"
+            path="/agregarenvio/"
             element={<AgregarUsuario />}
             exact
           ></Route>
@@ -24,7 +24,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Registro" element={<Registro />} />
           <Route
-            path="/editarusuario/:idusuario"
+            path="/editarenvio/:idusuario"
             element={<EditarUsuario />}
             exact
           ></Route>
