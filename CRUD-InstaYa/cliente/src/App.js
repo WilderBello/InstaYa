@@ -21,13 +21,7 @@ function App() {
             exact
           ></Route>
           <Route exact path="/" element={<Inicio />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Registro" element={<Registro />} />
-          <Route
-            path="/editarenvio/:idusuario"
-            element={<EditarUsuario />}
-            exact
-          ></Route>
+          <Route path="/editarenvio/:idusuario" element={<EditarUsuario />} exact/>
         </Routes>
       </BrowserRouter>
     </div>
