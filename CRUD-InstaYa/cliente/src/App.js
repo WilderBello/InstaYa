@@ -1,11 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import ListaUsuarios from "./ListaUsuarios";
 import AgregarUsuario from "./AgregarUsuario";
 import EditarUsuario from "./EditarUsuario";
-import Login from './Login';
 import Inicio from './Inicio';
-import Registro from './Registro';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
