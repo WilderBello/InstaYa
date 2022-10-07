@@ -343,12 +343,14 @@ function AgregarEnvio() {
                         }}
                       ></input>
                     </div>
-                    <button
-                      onClick={agregarEnvio}
-                      className="btn btn-success"
-                    >
+                    <button onClick={agregarEnvio} className="btn btn-success">
                       Guardar Envio
                     </button>
+                    <br />
+                    <br />
+                    <a href="/envios" className="btn btn-danger">
+                      Ir a envios
+                    </a>
                   </div>
                 </div>
               </div>
@@ -375,7 +377,7 @@ function AgregarEnvio() {
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">
-                ¿Listo para cerrar sesión?
+                  ¿Listo para cerrar sesión?
                 </h5>
                 <button
                   class="close"
